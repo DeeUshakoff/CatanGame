@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatanMAUI.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="10"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <Image
+                Source="hexagon.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, Player!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to Catan game, developed by idiot"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            
+            <Entry HorizontalOptions="Center" MinimumWidthRequest="150" Placeholder="Lobby key" HorizontalTextAlignment="Center" TextTransform="Uppercase" VerticalTextAlignment="Center" VerticalOptions="Center" MaxLength="5" />
+            <Button
+                x:Name="EnterGameButton"
+                Text="Play"
+                MinimumWidthRequest="150"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" />
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">or</Label>
+            <Button
+                x:Name="CreateLobbyButton"
+                Text="Create lobby"
+                MinimumWidthRequest="150"
+                SemanticProperties.Hint="Click to create lobby"
+                Clicked="OnCreateLobbyButtonClicked"
+                HorizontalOptions="Center" />
+            <ActivityIndicator x:Name="LoadingCircle" IsVisible="False" IsRunning="True"/>
+            <Button
+                x:Name="StartServerButton"
+                Text="Try connect"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" 
+                Clicked="StartServerButton_Clicked"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

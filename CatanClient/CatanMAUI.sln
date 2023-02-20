@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatanClient", "CatanClient.csproj", "{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatanServer", "..\CatanServer\CatanServer.csproj", "{04B89550-F386-4780-94EB-3F201C0B468D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9219A0-34B6-4BEF-AF7F-1FC21CC6016A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{04B89550-F386-4780-94EB-3F201C0B468D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B89550-F386-4780-94EB-3F201C0B468D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B89550-F386-4780-94EB-3F201C0B468D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{04B89550-F386-4780-94EB-3F201C0B468D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B89550-F386-4780-94EB-3F201C0B468D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B89550-F386-4780-94EB-3F201C0B468D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

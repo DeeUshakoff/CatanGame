@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatanMAUI.Views.StartupPage">
+    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label FontSize="Medium">Attempt to connect to the server</Label>
+        <ActivityIndicator  x:Name="LoadingCircle" IsVisible="False" IsRunning="True"/>
+        <Button
+                x:Name="TryConnect_Button"
+                Text="Try connect"
+                SemanticProperties.Hint="Try connect to server"
+                HorizontalOptions="Center" 
+                Clicked="TryConnect_Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

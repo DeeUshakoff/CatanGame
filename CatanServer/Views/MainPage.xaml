@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatanServer.MainPage">
+    <HorizontalStackLayout>
+        <ScrollView MinimumWidthRequest="200">
+            <VerticalStackLayout>
+                <Label FontSize="36">Log's</Label>
+                <VerticalStackLayout x:Name="LogContent">
+                </VerticalStackLayout>
+                <Button x:Name="ClearLog_Button" Clicked="ClearLog_Button_Clicked" Text="Clear" HorizontalOptions="Center"></Button>
+            </VerticalStackLayout>
+        </ScrollView>
+        <ScrollView>
+            <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+                <Image
+                Source="server_logo.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                <Label
+                Text="Server status: "
+                x:Name="ServerStatus_Label"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+                <Button
+                x:Name="StartStopServer_Button"
+                Text="Start"
+                SemanticProperties.Hint="Buton to start/stop server"
+                Clicked="StartStopServer_Button_Clicked"
+                HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </HorizontalStackLayout>
+    
+
+</ContentPage>
