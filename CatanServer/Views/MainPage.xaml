@@ -1,21 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CatanServer.MainPage">
-    <HorizontalStackLayout>
-        <ScrollView MinimumWidthRequest="200">
+             x:Class="CatanServer.Views.MainPage" NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             Title="" Padding="0"
+             >
+
+
+
+    <HorizontalStackLayout VerticalOptions="Center"
+            HorizontalOptions="Center">
+        <!--<ScrollView MinimumWidthRequest="200">
             <VerticalStackLayout>
                 <Label FontSize="36">Log's</Label>
                 <VerticalStackLayout x:Name="LogContent">
                 </VerticalStackLayout>
                 <Button x:Name="ClearLog_Button" Clicked="ClearLog_Button_Clicked" Text="Clear" HorizontalOptions="Center"></Button>
             </VerticalStackLayout>
-        </ScrollView>
-        <ScrollView>
+        </ScrollView>-->
+        <ScrollView VerticalOptions="Center"
+            HorizontalOptions="Center">
             <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
 
                 <Image
                 Source="server_logo.png"

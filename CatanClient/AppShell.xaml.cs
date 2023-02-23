@@ -6,4 +6,8 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 	}
+	public async Task DisplayDialog(string title, string message)
+	{
+         await DisplayAlert(title, message, "Ok");
+    }
 }

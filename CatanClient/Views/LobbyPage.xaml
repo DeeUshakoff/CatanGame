@@ -31,6 +31,6 @@
             FontSize="16"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button MaximumWidthRequest="200" Text="Quit"></Button>
+        <Button x:Name="Quit_Button" Clicked="Quit_Button_Clicked" MaximumWidthRequest="200" Text="Quit"></Button>
     </VerticalStackLayout>
 </ContentPage>

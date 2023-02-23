@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatanServer.Models.Game.PlacableObjects
 {
-    internal interface IPlacableObject
+    public interface IPlacableObject
     {
         Player Owner { get; }
         

@@ -21,17 +21,19 @@ public partial class StartupPage : ContentPage
 		try
 		{
             TryConnect_Button.IsEnabled = false;
-
             LoadingCircle.IsVisible = true;
+
             await viewModel.Initialize();
-            await Navigation.PushModalAsync(new MainPage());
+            
+            App.Current.MainPage = new MainPage();
+            //await Navigation.PushModalAsync(new MainPage());
         }
         catch(Exception ex)
 		{
             TryConnect_Button.IsEnabled = true;
             LoadingCircle.IsVisible = false;
+
             await DisplayAlert("Error", ex.Message, "Ok");
 		}
-
     }
 }

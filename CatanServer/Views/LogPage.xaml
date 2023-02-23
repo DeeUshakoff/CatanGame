@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatanServer.Views.LogPage"
+             >
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Log">
+            <MenuFlyoutItem Text="Clear" Clicked="ClearLog_Button_Clicked"/>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem Text="Export" Clicked="Export_Button_Clicked"/>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <VerticalStackLayout>
+        <ScrollView MinimumWidthRequest="200">
+            <VerticalStackLayout>
+                
+                <VerticalStackLayout x:Name="LogContent">
+                </VerticalStackLayout>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

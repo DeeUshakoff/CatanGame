@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatanServer.Models
+namespace CatanServer.Models.Server
 {
     public enum ServerStatus
     {

@@ -3,12 +3,28 @@
     x:Class="CatanServer.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:CatanServer"
-    Shell.FlyoutBehavior="Disabled">
-
+    xmlns:local="clr-namespace:CatanServer.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutItemIsVisible="True"
+    
+    Title="Server">
+    <Shell.TitleView>
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <HorizontalStackLayout Spacing="5">
+               <Label x:Name="ServerStatusLabel" Text="server status: not started" VerticalTextAlignment="Center" Padding="25,0,0,0"></Label>
+            <Ellipse x:Name="BALL" Stroke="Black" Fill="Red" WidthRequest="15" HeightRequest="15"/> 
+            </HorizontalStackLayout>
+            
+        </HorizontalStackLayout>
+        
+    </Shell.TitleView>
     <ShellContent
-        Title="Home"
+        Title="Server"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    <ShellContent
+        Title="Log's"
+        ContentTemplate="{DataTemplate local:LogPage}"
+        Route="LogPage" />
+    
 </Shell>

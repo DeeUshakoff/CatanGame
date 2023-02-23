@@ -1,45 +1,28 @@
-﻿using CatanServer.Models;
+﻿using CatanServer.Models.Server;
 
-namespace CatanServer
+namespace CatanServer.Views
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-        Server server = new Server();
+        
         delegate void StartStopAction();
         private static VerticalStackLayout LogContentStatic { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            LogContentStatic = LogContent;
+            //LogContentStatic = LogContent;
+            App.Server.ServerStatusChanged += ChangeStartStopButtonText;
         }
-        public static void OutputLog(string text)
+    
+        private void ChangeStartStopButtonText(ServerStatus status)
         {
-            LogContentStatic.Add(new Label() { Text = $"[{DateTime.Now.ToString()}] {text}"});
+            StartStopServer_Button.Text = status == ServerStatus.Stopped ? "Start" : "Stop";
+            ServerStatus_Label.Text = $"Server status: {status}";
         }
-        private async void StartStopServer_Button_Clicked(object sender, EventArgs e)
+        private void StartStopServer_Button_Clicked(object sender, EventArgs e)
         {
-            StartStopAction action = server.Status == ServerStatus.Stopped ? server.Start : server.Stop;
-            StartStopServer_Button.Text = server.Status == ServerStatus.Stopped ? "Stop" : "Start";
-
-            ServerStatus_Label.Text = server.Status == ServerStatus.Stopped ? "Server status: started" : "Server status: stopped";
-            action.Invoke();
-
-            //if(server.Status == ServerStatus.Started)
-            //{
-            //    server.Stop();
-                
-            //}
-            //else
-            //{
-            //    server.Start();
-            //}
-            
-        }
-
-        private void ClearLog_Button_Clicked(object sender, EventArgs e)
-        {
-            LogContent.Clear();
+            StartStopAction action = App.Server.Status == ServerStatus.Stopped ? App.Server.Start : App.Server.Stop;
+            action?.Invoke();
         }
     }
 }
