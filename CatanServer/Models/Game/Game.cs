@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatanServer.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CatanServer.Models.Game
 {
-    internal class Game
+    public class Game
     {
         public static List<Game> Games = new List<Game>();
-        public readonly Guid Id = new();
+        public Guid Id { get; private set; }
         public List<Player> Players { get; private set; } = new();
 
         public delegate void PlayerConnected(Player player);
@@ -24,6 +25,11 @@ namespace CatanServer.Models.Game
         public delegate void GameStopped();
         public event GameStopped GameStoppedEvent;
 
+        public Game()
+        {
+            Id = Guid.NewGuid();
+            Games.Add(this);
+        }
         public void Start()
         {
             GameStartedEvent?.Invoke();
@@ -35,7 +41,12 @@ namespace CatanServer.Models.Game
         public void AddPlayer(Player player)
         {
             //PlayerConnectedEvent?.Invoke(player);
-            Players.Add(player);
+            if(!Players.Contains(player))
+            {
+                Players.Add(player);
+            }
+
+            LogPage.OutputLog($"GameID: {Id}, Added Player with ID {player.Id}");
         }
         public void RemovePlayer(Player player) 
         {

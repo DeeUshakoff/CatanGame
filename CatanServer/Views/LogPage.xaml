@@ -11,13 +11,12 @@
         </MenuBarItem>
     </ContentPage.MenuBarItems>
     <VerticalStackLayout>
-        <ScrollView MinimumWidthRequest="200">
-            <VerticalStackLayout>
-                
-                <VerticalStackLayout x:Name="LogContent">
+        <ScrollView MinimumWidthRequest="200" VerticalScrollBarVisibility="Always">
+            
+                <VerticalStackLayout  x:Name="LogContent">
                 </VerticalStackLayout>
                 
-            </VerticalStackLayout>
+            
         </ScrollView>
     </VerticalStackLayout>
 </ContentPage>

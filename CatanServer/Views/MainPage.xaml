@@ -46,6 +46,7 @@
                 Clicked="StartStopServer_Button_Clicked"
                 HorizontalOptions="Center" />
 
+                
             </VerticalStackLayout>
         </ScrollView>
     </HorizontalStackLayout>

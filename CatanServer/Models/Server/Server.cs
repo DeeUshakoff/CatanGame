@@ -48,30 +48,33 @@ public class Server
             //LogPage.OutputLog($"{string.Join('\n', request.Headers)}");
 
 
-            if (request.Headers.AllKeys.Contains("CreateLobby"))
-            {
-                var lobbyID = request.Headers.Get("CreateLobby");
+            //if (request.Headers.AllKeys.Contains("CreateLobby"))
+            //{
+            //    var lobbyID = request.Headers.Get("CreateLobby");
 
-                var game = new Game.Game();
-                var player = new Player(new Guid(lobbyID), request.Headers.Get("Name"));
+            //    var game = new Game.Game();
+            //    var player = new Player(new Guid(lobbyID));
               
-                game.AddPlayer(player);
-                Game.Game.Games.Add(game);
+            //    game.AddPlayer(player);
+            //    Game.Game.Games.Add(game);
 
-                LogPage.OutputLog(string.Join('\n', game.Players.Select(p => $"player '{p.Name}': id {p.Id}")));
+            //    LogPage.OutputLog(string.Join('\n', game.Players.Select(p => $"player '{p.Name}': id {p.Id}")));
                
-            }
+            //}
+
+
             await MethodHandler.Handle(context);
 
 
 
+            // BODY
 
-            var body = request.InputStream;
-            var encoding = request.ContentEncoding;
-            var reader = new StreamReader(body, encoding);
-            var bodyContent = await reader.ReadToEndAsync();
+            //var body = request.InputStream;
+            //var encoding = request.ContentEncoding;
+            //var reader = new StreamReader(body, encoding);
+            //var bodyContent = await reader.ReadToEndAsync();
 
-            LogPage.OutputLog(bodyContent);
+            //LogPage.OutputLog(bodyContent);
 
             //var responseText = "Sample request";
             //byte[] responseBuffer = Encoding.UTF8.GetBytes(responseText);

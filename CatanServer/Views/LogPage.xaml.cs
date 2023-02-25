@@ -37,4 +37,6 @@ public partial class LogPage : ContentPage
     {
         await ExportLog();
     }
+
+    
 }

@@ -50,6 +50,12 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\Hexagon.png" />
+	  <None Remove="Resources\Images\hexagon_brick.png" />
+	  <None Remove="Resources\Images\hexagon_desert.png" />
+	  <None Remove="Resources\Images\hexagon_forest.png" />
+	  <None Remove="Resources\Images\hexagon_ore.png" />
+	  <None Remove="Resources\Images\hexagon_sheep.png" />
+	  <None Remove="Resources\Images\hexagon_wheat.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -57,16 +63,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\GamePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\LobbyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\StartupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Models\Game\" />
 	</ItemGroup>
 
 </Project>

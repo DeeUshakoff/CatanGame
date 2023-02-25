@@ -1,7 +1,8 @@
-﻿using CatanServer.Models.Game.PlacableObjects;
-using CatanServer.Models.Server;
+﻿
 
-namespace CatanServer.Models.Game;
+using CatanServer.Models;
+
+namespace CatanMAUI.Models.Game;
 
 public class Player : User
 {
@@ -9,7 +10,7 @@ public class Player : User
     public List<Player> PlayerList { get; set; } = new();
     public List<IPlacableObject> PlacedObjects { get; private set; } = new();
     public int Score { get; private set; }
-    public Player(Guid id) : base(id)
+    public Player(Guid id, Color color) : base(id, color)
     {
 
     }

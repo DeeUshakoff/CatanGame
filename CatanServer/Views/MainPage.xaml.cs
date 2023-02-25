@@ -24,5 +24,7 @@ namespace CatanServer.Views
             StartStopAction action = App.Server.Status == ServerStatus.Stopped ? App.Server.Start : App.Server.Stop;
             action?.Invoke();
         }
+
+        
     }
 }

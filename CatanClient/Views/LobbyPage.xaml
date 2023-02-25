@@ -16,16 +16,14 @@
             FontSize="16"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-            <Label 
-            Text="ABCDE"
-            FontSize="24"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+          
+            <Button x:Name="Copy_Button" Clicked="Copy_Button_Clicked" IsEnabled="False" Text="copy"/>
         </HorizontalStackLayout>
-        
-        <ListView>
 
-        </ListView>
+        <VerticalStackLayout x:Name="PlayerList_ListView" VerticalOptions="Center" Spacing="10"
+            HorizontalOptions="Center">
+            
+        </VerticalStackLayout>
         <Label 
             Text="waiting for players"
             FontSize="16"

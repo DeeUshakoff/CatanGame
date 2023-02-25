@@ -1,26 +1,18 @@
-﻿using System.Diagnostics;
+﻿using CatanMAUI.Models.Requests;
+using CatanMAUI.Models.Requests.GameCreation;
+using System.Diagnostics;
+using System.Net.Http.Json;
 using System.Text;
 
 namespace CatanMAUI.Models
 {
-
-    interface IRequest
+    public class Client
     {
-        string Name { get; }
-        string Content { get; set; }
-    }
-    class HandshakeRequest : IRequest
-    {
-        public string Name { get; } = "Handshake";
-        public string Content { get; set; }
-    }
-    class Client
-    {
-        protected internal string Id { get; } = Guid.NewGuid().ToString();
+        public static Guid Id { get; } = Guid.NewGuid();
         protected internal StreamWriter Writer { get; }
         protected internal StreamReader Reader { get; }
 
-        HttpClient client;
+        static HttpClient client;
 
         public Client()
         {
@@ -30,31 +22,52 @@ namespace CatanMAUI.Models
         public async Task ConnectToServer()
         {
 
-            var content = new StringContent($"{Id}");
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:8888/Handshake");
+            //var content = JsonContent.Create(new CreateGameRequest());
+            //var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:8888/Handshake/1/2");
 
-            request.Headers.Add("CreateLobby", Id);
-            request.Headers.Add("Name", "Test player name");
-            request.Content = content;
+            
+            await HandshakeRequest.SendRequest();
+            //request.Headers.Add("CreateLobby", Id.ToString());
+            //request.Headers.Add("Name", "Test player name");
+            //request.Content = content;
 
-            var response = await client.SendAsync(request);
+            //var response = await client.SendAsync(request);
+
+            //if (response.StatusCode != System.Net.HttpStatusCode.OK)
+            //{
+            //    await App.Current.MainPage.DisplayAlert("Error", $"{response.StatusCode}", "Ok");
+            //}
+            
+            //var responseContet = response.Content.ReadAsStreamAsync().Result;
+            
+            //var reader = new StreamReader(responseContet, Encoding.UTF8);
+            //var bodyContent = await reader.ReadToEndAsync();
+            
+        }
+        public static async Task<HttpResponseMessage> SendRequestGetResponeAsync(Request request, HttpMethod httpMethod)
+        {
+            var requestMessage = new HttpRequestMessage(httpMethod, request.GenerateURI());
+            requestMessage.Content = request.Content;
+
+            var response = await client.SendAsync(requestMessage);
 
             if (response.StatusCode != System.Net.HttpStatusCode.OK)
             {
                 await App.Current.MainPage.DisplayAlert("Error", $"{response.StatusCode}", "Ok");
             }
             
-            var responseContet = response.Content.ReadAsStreamAsync().Result;
-            
-            var reader = new StreamReader(responseContet, Encoding.UTF8);
+            return response;
+        }
+        public static async Task<string> ReadResponseBodyAsync(HttpResponseMessage response)
+        {
+            var responseContent = response.Content.ReadAsStreamAsync().Result;
+
+            var reader = new StreamReader(responseContent, Encoding.UTF8);
             var bodyContent = await reader.ReadToEndAsync();
 
+            reader.Close();
+            return bodyContent;
         }
-        public async Task CreateLobby()
-        {
-
-        }
-
         protected internal void Close()
         {
             //client.Dispose();

@@ -28,11 +28,12 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            
-            <Entry HorizontalOptions="Center" MinimumWidthRequest="150" Placeholder="Lobby key" HorizontalTextAlignment="Center" TextTransform="Uppercase" VerticalTextAlignment="Center" VerticalOptions="Center" MaxLength="5" />
+            <Entry x:Name="GameID_Entry" TextChanged="GameID_Entry_TextChanged" HorizontalOptions="Center" MinimumWidthRequest="150" Placeholder="Lobby key" HorizontalTextAlignment="Center" TextTransform="Uppercase" VerticalTextAlignment="Center" VerticalOptions="Center" />
             <Button
-                x:Name="EnterGameButton"
+                x:Name="ConnectGame_Button"
                 Text="Play"
+                IsEnabled="False"
+                Clicked="ConnectGame_Button_Clicked"
                 MinimumWidthRequest="150"
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Center" />
@@ -44,14 +45,12 @@
                 SemanticProperties.Hint="Click to create lobby"
                 Clicked="OnCreateLobbyButtonClicked"
                 HorizontalOptions="Center" />
+
+            <Button Text="test" x:Name="test_btn" Clicked="test_btn_Clicked">
+
+            </Button>
             <ActivityIndicator x:Name="LoadingCircle" IsVisible="False" IsRunning="True"/>
-            <Button
-                x:Name="StartServerButton"
-                Text="Try connect"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Center" 
-                Clicked="StartServerButton_Clicked"/>
-            
+                     
         </VerticalStackLayout>
     </ScrollView>
 
