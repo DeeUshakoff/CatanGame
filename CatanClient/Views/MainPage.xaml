@@ -46,7 +46,7 @@
                 Clicked="OnCreateLobbyButtonClicked"
                 HorizontalOptions="Center" />
 
-            <Button Text="test" x:Name="test_btn" Clicked="test_btn_Clicked">
+            <Button Text="test" x:Name="test_btn" MaximumWidthRequest="150" Clicked="test_btn_Clicked">
 
             </Button>
             <ActivityIndicator x:Name="LoadingCircle" IsVisible="False" IsRunning="True"/>

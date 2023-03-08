@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CatanMAUI.Models.Game
 {
-    internal class Cell
+    public class Cell
     {
         public readonly int ID;
-        public readonly IResource ResourceType;
+        public readonly ResourceType ResourceType;
         public List<Player> Owners = new();
-        public Cell(int id, IResource resourceType)
+        public Cell(int id, ResourceType resourceType)
         {
             ID = id;
             ResourceType = resourceType;

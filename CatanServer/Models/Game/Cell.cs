@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace CatanServer.Models.Game
 {
-    internal class Cell
+    public class Cell
     {
         public readonly int ID;
-        public readonly IResource ResourceType;
+        public readonly Resource Resource;
         public List<Player> Owners = new();
-        public Cell(int id, IResource resourceType)
+        public Cell(int id, Resource resource)
         {
             ID = id;
-            ResourceType = resourceType;
+            Resource = resource;
         }
     }
 }

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CatanMAUI.Views.GamePage"
              >
-    <VerticalStackLayout x:Name="GameField_StackLayout" VerticalOptions="Center" HorizontalOptions="Center" Spacing="-15" Margin="-200,0,0,0">
+    <VerticalStackLayout x:Name="GameField_StackLayout" VerticalOptions="Center" HorizontalOptions="Center" Spacing="-15" Margin="0,0,0,0">
         
     </VerticalStackLayout>
 </ContentPage>

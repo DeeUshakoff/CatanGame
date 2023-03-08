@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace CatanServer.Models.Game.Resources
 {
-    internal interface IResource
+    public class Resource
     {
         ResourceType ResourceType { get; }
+        public Resource(ResourceType resourceType)
+        {
+            ResourceType = resourceType;
+        } 
     }
     public enum ResourceType
     {

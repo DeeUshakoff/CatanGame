@@ -12,11 +12,12 @@ namespace CatanMAUI.Models.Game
     }
     public enum ResourceType
     {
+        NoResource,
         Ore,
         Brick,
         Wood,
         Sheep,
-        Wheat,
-        NoResource
+        Wheat
+       
     }
 }
